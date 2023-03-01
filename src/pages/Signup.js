@@ -32,14 +32,21 @@ const Signup = () => {
 					email: res.user.email,
 					uid: res.user.uid,
 				});
-				// Signed in
-				// const user = res.user;
 			})
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
 				console.log(errorCode, errorMessage);
-				toast(errorMessage);
+				toast.error(errorMessage, {
+					position: "top-right",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: false,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "colored",
+				});
 			});
 	};
 
@@ -58,7 +65,7 @@ const Signup = () => {
 				<Col lg={6} className="offset-lg-3 mt-5">
 					<Card>
 						<Form onSubmit={handleFormSubmit}>
-							<CardHeader className="">SignUp here</CardHeader>
+							<CardHeader className="">SignUp Here</CardHeader>
 							<CardBody>
 								<FormGroup row>
 									<Label for="email" sm={3}>
@@ -97,7 +104,7 @@ const Signup = () => {
 							</CardBody>
 							<CardFooter>
 								<Button type="submit" block color="primary">
-									Sign In
+									Sign Up
 								</Button>
 							</CardFooter>
 						</Form>

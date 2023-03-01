@@ -36,7 +36,12 @@ const Header = () => {
 				<Nav className="ms-auto" navbar>
 					{context.user ? (
 						<NavItem>
-							<NavLink tag={Link} to="/" className="text-white">
+							<NavLink
+								tag={Link}
+								to="/"
+								className="text-white"
+								onClick={() => context.setUser(null)}
+							>
 								Logout
 							</NavLink>
 						</NavItem>
